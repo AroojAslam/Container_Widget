@@ -10,31 +10,37 @@ class ContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text('Container widget'),
+          backgroundColor: Colors.amber.shade900,
+        ),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
                 height: 200,
                 width: 200,
+                padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: Colors.red,
+                    color:  Colors.amber.shade900,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: const [
                       BoxShadow(
-                        color:Colors.black54,
-                        blurRadius: 6.0,
-                        offset: Offset(5, 5),
+                        color:Colors.black26,
+                        blurRadius: 2.0,
+                        offset: Offset(2, 2),
                         blurStyle: BlurStyle.normal,
                         spreadRadius: 1,
                       ),
                       BoxShadow(
-                        color:Colors.black54,
-                        blurRadius: 6.0,
-                        offset: Offset(-5, -5),
+                        color:Colors.black26,
+                        blurRadius: 2.0,
+                        offset: Offset(-2, -2),
                         blurStyle: BlurStyle.normal,
-                        spreadRadius: 1,
+                        spreadRadius: 2,
                       ),
                     ]
                 ),
@@ -45,11 +51,9 @@ class ContainerWidget extends StatelessWidget {
                 //   width: 2,
                 // ),
 
-
+                child: Text('A container widget is same as <div> tag in html. If this widget does not contain any child widget, it will fill the whole area on the screen automatically.'),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 50),
-              child:Container(
+              Container(
                 height: 200,
                 width: 200,
                 decoration:const BoxDecoration(
@@ -68,9 +72,8 @@ class ContainerWidget extends StatelessWidget {
                   ),
                 ),
 
-                child: Text('A container widget is same as <div> tag in html. If this widget does not contain any child widget, it will fill the whole area on the screen automatically.'),
+
               ) ,
-              ),
             ],
           ),
         ),
